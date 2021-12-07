@@ -7,7 +7,7 @@ function computerPlay() {
     return weapons[ran];
 }
 
-
+const body = document.querySelector('body');
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
@@ -16,7 +16,10 @@ buttons.forEach((button) => {
         const computerSelection = computerPlay();
         const playerSelection = value;
         // console.log(playerSelection);
-        console.log(play(playerSelection,computerSelection));
+        //  console.log(play(playerSelection,computerSelection));
+        const result = document.createElement('p');
+        result.textContent = play(playerSelection,computerSelection);
+        body.appendChild(result);
     })
 })
 
