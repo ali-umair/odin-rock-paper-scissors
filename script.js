@@ -7,8 +7,18 @@ function computerPlay() {
     return weapons[ran];
 }
 
-const computerSelection = computerPlay();
-const playerSelection = prompt("Enter your choice (Rock, Paper, Scissors)").toLowerCase();
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        const value = button.getAttribute('value')
+        const computerSelection = computerPlay();
+        const playerSelection = value;
+        // console.log(playerSelection);
+        console.log(play(playerSelection,computerSelection));
+    })
+})
 
 function play(playerSelection, computerSelection) {
 
@@ -37,4 +47,4 @@ function play(playerSelection, computerSelection) {
     return "Please enter your choice correctly."
 }
 
-console.log(console.log(play(playerSelection, computerSelection)));
+// console.log(console.log(play(playerSelection, computerSelection)));
